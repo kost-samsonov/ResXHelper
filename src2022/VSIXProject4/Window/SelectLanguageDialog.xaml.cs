@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -55,8 +56,35 @@ namespace VSIXProject4
         public List<string> FileNames { get; set; } = new List<string>();
 
         public bool CanAdd => !string.IsNullOrEmpty(TxtName.Text);
+    
+    private void LoadLanguages(List<ResourceLanguage> defaultLanguages)
+    {
+      var allLang = new ObservableCollection<ResourceLanguage>();
+      foreach (CultureInfo info in CultureInfo.GetCultures(CultureTypes.AllCultures))
+      {
+        ResourceLanguage rl = new ResourceLanguage();
+        rl.Code = info.Name;
+        rl.NativeName = info.NativeName;
+        rl.Name = string.Format("{0} ({1})", info.EnglishName, rl.Code);
+        allLang.Add(rl);
+      }
 
-        private void LoadLanguages(List<ResourceLanguage> defaultLanguages)
+      SelectedLanguages = new ObservableCollection<ResourceLanguage>(defaultLanguages);
+      AllLanguages = allLang;
+    }
+    public void CollectLangFiles(string fileName)
+    {
+
+      FileNames.Clear();
+      FileNames.Add($"{fileName}.resx");
+      foreach (var lang in SelectedLanguages)
+      {
+        FileNames.Add($"{fileName}.{lang.Code}.resx");
+      }
+
+    }
+
+    private void LoadLanguages3(List<ResourceLanguage> defaultLanguages)
         {
             var assembly = Assembly.GetExecutingAssembly();
             const string resourceName = "VSIXProject4.Resources.languages.json";
