@@ -9,26 +9,73 @@
   <Commands package="VSIXProject4">
     <!--This section defines the elements the user can interact with, like a menu command or a button
         or combo box in a toolbar. -->
+    
+    <Groups>
+      <Group guid="guidGlobalPluginCmdSet" id ="ProjectAddGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_PROJECT_ADD" />  
+      </Group>
+      <Group guid="guidGlobalPluginCmdSet" id ="ProjectNodeGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_PROJNODE" />
+      </Group>
+      <Group guid="guidGlobalPluginCmdSet" id ="FolderNodeGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_FOLDERNODE" />
+      </Group>
+      <Group guid="guidGlobalPluginCmdSet" id ="ItemNodeGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_ITEMNODE" />
+      </Group>
+      
+    </Groups>
+    
+
     <Buttons>
-      <Button guid="VSIXProject4" id="AddResourcesCommand" priority="0xF000" type="Button">
-        <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_PROJECT_ADD_ITEMS" />
+      <Button guid="guidGlobalPluginCmdSet" id="AddResourcesCommand" priority="0x0600" type="Button">
+        <Parent guid="guidGlobalPluginCmdSet" id ="ProjectAddGroup" />        
         <Icon guid="commandIcon" id="commandIcon1" />
         <Strings>
           <ButtonText>Add resources</ButtonText>
         </Strings>
       </Button>
     </Buttons>
-	  <Bitmaps>
-		  <Bitmap guid="commandIcon" href="Resources\file-alt.png" usedList="commandIcon1"/>
-	  </Bitmaps>
+    <Bitmaps>
+      <Bitmap guid="commandIcon" href="Resources\file-alt.png" usedList="commandIcon1"/>
+    </Bitmaps>
   </Commands>
 
   <Symbols>
-	  <GuidSymbol name="commandIcon" value="{4537D792-6E3D-4118-BC58-83177CC105AB}">
-		  <IDSymbol name="commandIcon1" value="1" />
-	  </GuidSymbol>
-    <GuidSymbol name="VSIXProject4" value="{74863b99-dc65-4f66-b21c-9fe4bf1aaa40}">
+    <GuidSymbol name="VSIXProject4" value="{74863b99-dc65-4f66-b21c-9fe4bf1aaa40}" />
+
+
+    <GuidSymbol name="guidGlobalPluginCmdSet" value="{FA42213A-5F94-4519-90DD-38E7795E70AC}">
       <IDSymbol name="AddResourcesCommand" value="0x0100" />
+      <IDSymbol name="ProjectAddGroup" value="0x1101" />
+      <IDSymbol name="ProjectNodeGroup" value="0x1102" />
+      <IDSymbol name="FolderNodeGroup" value="0x1103" />
+      <IDSymbol name="ItemNodeGroup" value="0x1104" />
+      
     </GuidSymbol>
+
+    <GuidSymbol name="commandIcon" value="{4537D792-6E3D-4118-BC58-83177CC105AB}">
+      <IDSymbol name="commandIcon1" value="1" />
+    </GuidSymbol>
+
+
   </Symbols>
+
+  <CommandPlacements>
+    <CommandPlacement guid="guidGlobalPluginCmdSet" id ="AddResourcesCommand" priority="0x0600">
+      <Parent guid="guidGlobalPluginCmdSet" id ="ProjectAddGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidGlobalPluginCmdSet" id ="AddResourcesCommand" priority="0x0600">
+      <Parent guid="guidGlobalPluginCmdSet" id ="ProjectNodeGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidGlobalPluginCmdSet" id ="AddResourcesCommand" priority="0x0600">
+      <Parent guid="guidGlobalPluginCmdSet" id ="FolderNodeGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidGlobalPluginCmdSet" id ="AddResourcesCommand" priority="0x0600">
+      <Parent guid="guidGlobalPluginCmdSet" id="ItemNodeGroup" />
+    </CommandPlacement>
+
+  </CommandPlacements>
+
+
 </CommandTable>
