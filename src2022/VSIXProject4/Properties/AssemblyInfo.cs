@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Resources;
 using System.Runtime.InteropServices;
 using VSIXProject4;
 
@@ -15,6 +16,7 @@ using VSIXProject4;
 
 [assembly: AssemblyVersion(Vsix.Version)]
 [assembly: AssemblyFileVersion(Vsix.Version)]
+
 
 namespace System.Runtime.CompilerServices
 {

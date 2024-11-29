@@ -9,9 +9,9 @@ namespace VSIXProject4
     {
         public const string Id = "27bf0bda-a4e6-431c-a350-f38a7b74bbf6";
         public const string Name = "ResX Helper 2022";
-        public const string Description = @"Adds a right click menu to the solution explorer where you can specify a base filename and a list of languages. Once you click Add file(s) the corresponding .resx files will be created.";
+        public const string Description = @"Adds a right click menu to solution explorer nodes where you can select a base filename or folder. Once you click Add resources the corresponding .resx files will be created with selected in Options locales.";
         public const string Language = "en-US";
-        public const string Version = "1.3.21";
+        public const string Version = "1.3.28";
         public const string Author = "BDSoftware";
         public const string Tags = "";
     }

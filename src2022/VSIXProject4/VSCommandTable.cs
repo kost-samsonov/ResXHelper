@@ -27,10 +27,12 @@ namespace VSIXProject4
     internal sealed partial class PackageIds
     {
         public const int AddResourcesCommand = 0x0100;
-        public const int ProjectAddGroup = 0x1101;
-        public const int ProjectNodeGroup = 0x1102;
-        public const int FolderNodeGroup = 0x1103;
-        public const int ItemNodeGroup = 0x1104;
+        public const int AddResourcesGroup = 0x1201;
+        public const int ProjectAddGroup = 0x1202;
+        public const int ProjectNodeGroup = 0x1203;
+        public const int FolderNodeGroup = 0x1204;
+        public const int FolderAddGroup = 0x1205;
+        public const int ItemNodeGroup = 0x1206;
         public const int commandIcon1 = 0x0001;
     }
 }

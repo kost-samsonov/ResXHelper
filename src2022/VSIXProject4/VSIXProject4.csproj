@@ -56,16 +56,16 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Commands\AddResourcesCommand.cs" />
+    <Compile Include="VSCommandTable.cs">
+      <DependentUpon>VSCommandTable.vsct</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Include="VSIXProject4Package.cs" />
     <Compile Include="source.extension.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>source.extension.vsixmanifest</DependentUpon>
-    </Compile>
-    <Compile Include="VSCommandTable.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VSCommandTable.vsct</DependentUpon>
     </Compile>
     <Compile Include="Window\SelectLanguageDialog.xaml.cs">
       <DependentUpon>SelectLanguageDialog.xaml</DependentUpon>
