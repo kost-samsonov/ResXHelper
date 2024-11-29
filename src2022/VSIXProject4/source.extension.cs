@@ -11,7 +11,7 @@ namespace VSIXProject4
         public const string Name = "ResX Helper 2022";
         public const string Description = @"Adds a right click menu to the solution explorer where you can specify a base filename and a list of languages. Once you click Add file(s) the corresponding .resx files will be created.";
         public const string Language = "en-US";
-        public const string Version = "1.3.19";
+        public const string Version = "1.3.21";
         public const string Author = "BDSoftware";
         public const string Tags = "";
     }
